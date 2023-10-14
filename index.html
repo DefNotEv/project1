@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hack Help</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/45123220ea.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div class="header">
+        
+        <div class="header__container">
+            <div class="header__img--container">
+                <img src="images/myImage.png" alt="" id="header__img">
+            </div>
+
+            <div class="header__content">
+                <div class="header__container1">
+                </div>
+                <div class="form__div">
+                <form id="hackathon-form">
+
+                    <div class="form_title">
+                        <p>Generate Hackathon Ideas</p>
+                    </div>
+
+                    <div class="form__prompt">
+                    <label for="theme">Hackathon Theme:</label>
+                    <input type="text" id="theme" name="theme" required>
+                    </div>
+
+                    <div class="form__prompt">
+                    <label for="specializations">Team Member Specializations:</label>
+                    <input type="text" id="specializations" name="specializations" required>
+                    </div>
+                
+                    <div class="form__prompt">
+                    <label for="experience">Team Member Experience Level:</label>
+                    <input type="text" id="experience" name="experience" required>
+                    </div>
+
+                    <div class="form__prompt">
+                    <label for="length">Amount of Time:</label>
+                    <input type="text" id="length" name="length" required>
+                    </div>
+
+                    <div class="form__prompt">
+                        <button type="submit">Generate Hackathon Idea</button>
+                    </div>
+                </form>
+            <div class="form_output">
+                <p id="output-text">Hello !</p>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="script.js"></script>
+    <script>
+        document.getElementById('output-text').innerText = GPTResponse;
+    </script>
+</body>
+</html>
