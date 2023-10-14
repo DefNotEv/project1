@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang = 'en'>
 <head>
     <title>Hack Help</title>
     <link rel="icon" type="image/png" href="images/favicon.png">
@@ -7,60 +7,124 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Alegreya&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/45123220ea.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/45123220ea.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <!-- NAVBAR SECTION -->
+    <nav class = "navbar">
+        <div class="navbar__container">
+            <a href="?" id="navbar__logo">  
+                <i class="fa-solid fa-desktop"></i> Hack Help</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item" >
+                    <a href="page3.html" class="navbar__links">Page 3</a>
+                </li>
+                
+                <li class="navbar__item">
+                    <a href="page1.html" class="navbar__links">Page 1</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="page2.html" class="navbar__links">Page 2</a>
+                </li>
+                <li class="navbar__btn">
+                    <a href="index.html" class="button">Home</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="everythingButNav">
+        <div class="navImg--container">
+            <img src="images/topBar.jpeg" alt="" id="topBar__img">
+        </div>
+    <!--HEADER SECTION-->
     <div class="header">
         
         <div class="header__container">
             <div class="header__img--container">
-                <img src="images/myImage.png" alt="" id="header__img">
+                <img src="images/computer.png" alt="" id="header__img"  style="width:100%;">
             </div>
 
             <div class="header__content">
                 <div class="header__container1">
+                <img src="images/speechBubble.png" alt="Snow" style="width:90%;" id="speechImg">
                 </div>
-                <div class="form__div">
+                <div class="form__div" >
                 <form id="hackathon-form">
 
-                    <div class="form_title">
+                    <div class="form__title">
                         <p>Generate Hackathon Ideas</p>
                     </div>
 
+                    <div class="form__questions">
                     <div class="form__prompt">
-                    <label for="theme">Hackathon Theme:</label>
-                    <input type="text" id="theme" name="theme" required>
+                        <div class="form__label"><label for="theme">Hackathon Theme:</label></div>
+                        <div class="form__input"><input type="text" id="theme" name="theme" required></div>
                     </div>
 
                     <div class="form__prompt">
-                    <label for="specializations">Team Member Specializations:</label>
-                    <input type="text" id="specializations" name="specializations" required>
+                        <div class="form__label"><label for="specializations">Team Member Specializations:</label></div>
+                        <div class="form__input"><input type="text" id="specializations" name="specializations" required></div>
                     </div>
                 
                     <div class="form__prompt">
-                    <label for="experience">Team Member Experience Level:</label>
-                    <input type="text" id="experience" name="experience" required>
+                        <div class="form__label"><label for="experience">Team Member Experience Level:</label></div>
+                        <div class="form__input"><input type="text" id="experience" name="experience" required></div>
                     </div>
 
                     <div class="form__prompt">
-                    <label for="length">Amount of Time:</label>
-                    <input type="text" id="length" name="length" required>
+                        <div class="form__label"><label for="length">Hackathon Length:</label></div>
+                        <div class="form__input"><input type="text" id="length" name="length" required></div>
                     </div>
+                </div>
 
                     <div class="form__prompt">
-                        <button type="submit">Generate Hackathon Idea</button>
+                        <button type="submit" > <span class="text">Generate Hackathon Idea</span></button>
                     </div>
+
+                    <div class="form__output">
+                        <p>Scroll Down for Generated Idea<!-- This will be output!--></p>
+                    </div>
+                
                 </form>
-            <div class="form_output">
-                <p id="output-text">Hello !</p>
             </div>
+            </div>
+            
         </div>
     </div>
-    <script type="module" src="script.js"></script>
-    <script>
-        document.getElementById('output-text').innerText = GPTResponse;
-    </script>
+    <div class="navImg--container">
+        <img src="images/middleBar.png" alt="" id="middleBar__img">
+    </div>
+    <div class="generated__idea">
+        <p>Generate an idea!</p>
+    </div>
+    <div class="navImg--container">
+        <img src="images/bottomBar.png" alt="" id="bottomBar__img">
+    </div>
+    <!-- Main SECTION-->
+    <div class="main" id = "jump__main">
+        <div class="main__container">
+            <div class="main__content">
+                <h1>Hello!</h1>
+                <h2>We are Hack Help</h2>
+                <div class="main__content__box">
+                    <p>This could be an about us section
+                    </p>
+                </div>
+                
+            </div>
+            <!--<div class="header__img--container">
+                <img src="images/pic1.svg" alt="pic" id="header__img">
+            </div>-->
+        </div>
+    </div>
+    <script type="module" src="app.js"></script>
 </body>
 </html>

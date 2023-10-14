@@ -1,17 +1,13 @@
 {
-  "name": "hack-the-valley",
+  "name": "htv-almost-final",
   "version": "1.0.0",
   "description": "",
-  "type":"module",
-  "main": "index.js",
+  "type": "module",
+  "main": "app.js",
   "scripts": {
-    "htv2": "node scripttest.js"
+    "htvf": "node app.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "dotenv": "^16.3.1",
-    "openai": "^4.12.1"
-  }
+  "license": "ISC"
 }
