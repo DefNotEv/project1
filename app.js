@@ -1,9 +1,9 @@
 import { config } from "dotenv";
-import { OpenAI } from "openai";
+import OpenAI from "openai";
 config();
 
 const chatGPT = new OpenAI({
-  apiKey: process.env.API_KEY,
+  apiKey: process.env.API_KEY, dangerouslyAllowBrowser: true
 });
 
 const form = document.getElementById('hackathon-form');
@@ -14,6 +14,9 @@ const lengthInput = document.getElementById('length');
 const outputDiv = document.querySelector('.generated__idea');
 
 form.addEventListener('submit', async (event) => {
+
+  //console.log("Hello World!");
+  
   event.preventDefault();
 
   const theme = themeInput.value;
@@ -23,25 +26,36 @@ form.addEventListener('submit', async (event) => {
 
   const message = `The theme of the hackathon is "${theme}", the specializations of the team members are "${specializations}", and the team has an "${experience}" experience level. The hackathon is "${length}" long, therefore the project must be completed in this timeframe. Come up with a hackathon project idea that fits all these criteria, and provide online resources that can assist them in their project.`;
 
+  
+
+  async function getAIResponse(userInput) {
+    //console.log(message);
+    const res = await chatGPT.chat.completions.create({
+        model: "gpt-3.5-turbo",
+        messages: [{ role: "user", content: userInput }],
+    });
+    console.log(res.choices[0].message.content);
+    return res.choices[0].message.content;
+
+    //const idea = response.data.choices[0].message.content;
+
+    //outputDiv.innerHTML = `<p>${idea}</p>`;
+  }
+  
+
   getAIResponse(message)
   .then(response => {
+      console.log("ai response");
       console.log(response);
+      document.getElementById('aiResponse').innerHTML = response;
   })
   .catch(error => {
       console.error("An error occurred:", error);
   });
 
-  async function getAIResponse(userInput) {
-    const res = await openai.chat.completions.create({
-        model: "gpt-3.5-turbo",
-        messages: [{ role: "user", content: userInput }],
-    });
-    return res.choices[0].message.content;
+});
 
-    const idea = response.data.choices[0].message.content;
-
-    outputDiv.innerHTML = `<p>${idea}</p>`;
-}});
+  
 
 const menu = document.querySelector('#mobile-menu')
 const menuLink = document.querySelector('.navbar__menu')
@@ -61,6 +75,7 @@ for (i = 0; i < acc.length; i++) {
     this.classList.toggle("active");
 
     /* Toggle between hiding and showing the active panel */
+    
     var panel = this.nextElementSibling;
     if (panel.style.display === "block") {
       panel.style.display = "none";
@@ -68,4 +83,4 @@ for (i = 0; i < acc.length; i++) {
       panel.style.display = "block";
     }
   });
-}
+} 

@@ -2,12 +2,18 @@
   "name": "htv-almost-final",
   "version": "1.0.0",
   "description": "",
-  "type": "module",
+  "source": "index.html",
   "main": "app.js",
   "scripts": {
-    "htvf": "node app.js"
+    "htvf": "node app.js",
+    "dev": "parcel index.html"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "openai": "^4.12.1",
+    "parcel-bundler": "^1.12.5"
+  }
 }
